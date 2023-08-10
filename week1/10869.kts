@@ -5,8 +5,11 @@ fun main() {
 		val a = this.next().toInt()
 		val b = this.next().toInt()
 		println(a + b)
+		println(a - b)
+		println(a * b)
+		println(a / b)
+		println(a % b)
 	}
 }
 
 main()
-
