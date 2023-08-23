@@ -13,8 +13,8 @@ val arr = IntArray(m)
 fun recur(depth: Int) {
 	if (depth === m) return writer.write("${arr.joinToString(" ")}\n")
 
-	for (i in 1..n) {
-		if (depth > 0 && arr[depth - 1] > i) continue
+	val start = if (depth > 0) arr[depth - 1] else 1
+	for (i in start..n) {
 		arr[depth] = i
 		recur(depth + 1)
 	}
