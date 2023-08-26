@@ -13,3 +13,7 @@ brew install kotlin
 ```bash
 kotlinc -script -nowarn ${filename}
 ```
+
+### online compiler
+
+- https://onecompiler.com/kotlin
