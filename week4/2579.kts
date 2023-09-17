@@ -12,7 +12,7 @@ fun main() {
 	
 	for (i in 3..n) {
         arr[i] = maxOf(arr[i - 2] + steps[i], arr[i - 3] + steps[i - 1] + steps[i])
-  }
+	}
 	writer.write("${arr[n]}\n")
 	writer.flush()
 }
