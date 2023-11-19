@@ -1,4 +1,4 @@
-// https://www.acmicpc.net/problem/10972
+// https://www.acmicpc.net/problem/10973
 
 import java.util.*
 
@@ -8,11 +8,11 @@ fun Array<Int>.swap(i: Int, j: Int) {
 	this[j] = temp
 }
 
-fun nextPermutation(perm: Array<Int>, n: Int) {
+fun prevPermutation(perm: Array<Int>, n: Int) {
 	var i = n - 1
 	var j = n - 1
 
-	while (0 < i && perm[i] < perm[i - 1]) {
+	while (0 < i && perm[i - 1] < perm[i]) {
 		--i
 	}
 
@@ -21,12 +21,12 @@ fun nextPermutation(perm: Array<Int>, n: Int) {
 		return
 	}
 
-	while (i < j && perm[j] < perm[i - 1]) {
+	while (i < j && perm[i - 1] < perm[j]) {
 		--j
 	}
 
 	perm.swap(i - 1, j)
-	perm.sort(i, n)
+	perm.sortDescending(i, n)
 	println(perm.joinToString(" "))
 }
 
@@ -37,7 +37,7 @@ fun main() {
 	val perm = Array(n) {
 		token.nextToken().toInt()
 	}
-	nextPermutation(perm, n)
+	prevPermutation(perm, n)
 }
 
 main()
